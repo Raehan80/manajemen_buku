@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    [x-cloak] {
+        display: none !important;
+    }
+
+    body {
+        @apply min-h-screen bg-[#061a14] text-emerald-50 antialiased;
+        background-image:
+            radial-gradient(ellipse at 12% 0%, rgba(16, 185, 129, 0.18), transparent 38%),
+            radial-gradient(ellipse at 90% 15%, rgba(52, 211, 153, 0.1), transparent 32%),
+            linear-gradient(145deg, #061a14 0%, #0a2119 48%, #071711 100%);
+        background-attachment: fixed;
+    }
+
+    input,
+    select,
+    textarea {
+        color-scheme: dark;
+    }
+}
+
+@layer components {
+    .glass-panel {
+        @apply rounded-2xl border border-white/10 bg-white/[0.06] shadow-2xl shadow-black/20 backdrop-blur-xl;
+    }
+
+    .glass-subpanel {
+        @apply rounded-xl border border-white/10 bg-black/10;
+    }
+
+    .glass-input {
+        @apply block w-full rounded-xl border border-white/10 bg-black/20 px-4 py-3 text-sm text-emerald-50 placeholder:text-emerald-100/35 focus:border-emerald-400/60 focus:ring-2 focus:ring-emerald-400/20;
+    }
+
+    .glass-button {
+        @apply inline-flex items-center justify-center gap-2 rounded-xl border border-white/10 px-4 py-2.5 text-sm font-semibold transition duration-200 focus:outline-none focus:ring-2 focus:ring-emerald-300/50;
+    }
+
+    .glass-button-primary {
+        @apply glass-button border-emerald-300/20 bg-emerald-400 text-emerald-950 shadow-lg shadow-emerald-950/20 hover:bg-emerald-300;
+    }
+
+    .glass-button-muted {
+        @apply glass-button bg-white/5 text-emerald-50 hover:bg-white/10;
+    }
+
+    .glass-button-danger {
+        @apply glass-button border-rose-300/15 bg-rose-400/10 text-rose-200 hover:bg-rose-400/20;
+    }
+
+    .glass-table th {
+        @apply border-b border-white/10 px-4 py-3 text-left text-xs font-semibold uppercase tracking-[0.16em] text-emerald-100/50;
+    }
+
+    .glass-table td {
+        @apply border-b border-white/[0.06] px-4 py-4 align-middle text-sm text-emerald-50/80;
+    }
+
+    .glass-table tbody tr:last-child td {
+        @apply border-b-0;
+    }
+}
